@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './OnOff.css';
 
 type PropsType = {
-    // on: boolean
+    onChange:(on:boolean)=>void
 }
 
 export function UncontrolledOnOff(props:PropsType) {
@@ -35,11 +35,21 @@ const indicatorStyle={
     marginLeft: "5px",
     backgroundColor: on ? "green" : "red"
 };
+
+const onClicked=()=>{
+    setOn(true)
+    props.onChange(true)
+}
+    const offClicked=()=>{
+        setOn(false)
+        props.onChange(false)
+    }
+
     return (
         <div>
-            <div onClick={()=>{setOn(true)}} style={onStyle}>On</div>
-            <div onClick={()=>{setOn(false)}} style={offStyle}>Off</div>
-            <div style={indicatorStyle}></div>
+            <div onClick={()=>{onClicked()}} style={onStyle}>On</div>
+            <div onClick={()=>{offClicked()}} style={offStyle}>Off</div>
+            <div style={indicatorStyle}/>
         </div>
 
     )

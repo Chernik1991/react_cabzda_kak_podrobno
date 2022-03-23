@@ -18,17 +18,17 @@ function App() {
             <PageTitle title={"This is App component"}/>
             {/*<PageTitle title={"My friends"}/>*/}
             Article 1
+            <UncontrolledOnOff onChange={setOnOffSwitch}/> {onOffSwitch.toString()}
             <UncontrolledAccordion titleValue={"Menu"} />
-            <Accordion titleValue={"Users"} collapsed={accordionCollapsed} onClick={setAccordionCollapsed}/>
+            <Accordion titleValue={"Users"} collapsed={accordionCollapsed} onChange={setAccordionCollapsed}/>
             <UncontrolledRating/>
-            <UncontrolledOnOff/>
             {/*<Rating value={0}/>*/}
             {/*<Rating value={1}/>*/}
             {/*<Rating value={2}/>*/}
             <Rating value={ratingValue} onClick={setRatingValue}/>
             {/*<Rating value={4}/>*/}
             {/*<Rating value={5}/>*/}
-            <OnOff onOffSwitch={onOffSwitch} onClick={setOnOffSwitch}/>
+            <OnOff on={onOffSwitch} onClick={setOnOffSwitch}/>
         </div>
     );
 }

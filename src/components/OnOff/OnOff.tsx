@@ -2,8 +2,8 @@ import React from 'react';
 import './OnOff.css';
 
 type PropsType = {
-    onOffSwitch:boolean
-    onClick:(onOffSwitch:boolean)=>void
+    on:boolean
+    onClick:(on:boolean)=>void
 }
 
 export function OnOff(props:PropsType) {
@@ -14,7 +14,7 @@ const onStyle = {
     border: "1px solid black",
     display:"inline-block",
     padding: "2px",
-    backgroundColor: props.onOffSwitch ? "green" : "white"
+    backgroundColor: props.on ? "green" : "white"
 };
 const offStyle = {
     width: "30px",
@@ -23,7 +23,7 @@ const offStyle = {
     display:"inline-block",
     marginLeft: "5px",
     padding: "2px",
-    backgroundColor: props.onOffSwitch ? "white" : "red"
+    backgroundColor: props.on ? "white" : "red"
 };
 const indicatorStyle={
     width: "10px",
@@ -32,12 +32,12 @@ const indicatorStyle={
     border: "1px solid black",
     display:"inline-block",
     marginLeft: "5px",
-    backgroundColor: props.onOffSwitch ? "green" : "red"
+    backgroundColor: props.on ? "green" : "red"
 };
     return (
         <div>
-            <div onClick={()=>{props.onClick(!props.onOffSwitch)}} style={onStyle}>On</div>
-            <div onClick={()=>{props.onClick(!props.onOffSwitch)}} style={offStyle}>Off</div>
+            <div onClick={()=>{props.onClick(true)}} style={onStyle}>On</div>
+            <div onClick={()=>{props.onClick(false)}} style={offStyle}>Off</div>
             <div style={indicatorStyle}></div>
         </div>
 
