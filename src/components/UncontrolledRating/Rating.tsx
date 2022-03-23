@@ -1,24 +1,10 @@
 import React, {useState} from "react";
-//
-// type RatingPropsType={
-//     value:number;
-// }
+
 type StarPropsType={
     selected:boolean
 }
-export function Rating() {
+export function UncontrolledRating() {
 
-    // if (props.value === 5) {
-    //     return (
-    //         <div>
-    //             <Star selected={true}/>
-    //             <Star selected={true}/>
-    //             <Star selected={true}/>
-    //             <Star selected={true}/>
-    //             <Star selected={true}/>
-    //         </div>
-    //     );
-    // }
     let [star,setStar]=useState(0)
     return (
         <div>
@@ -32,13 +18,16 @@ export function Rating() {
 }
 
 function Star(props: StarPropsType) {
-    if (props.selected === true) {
-        return (
-            <span><b>Star </b></span>
-        )
-    } else {
-        return (
-            <span>Star </span>
-        )
-    }
+    return(
+    props.selected === true?<span><b>Star </b></span>:<span>Star </span>)
+    //
+    // if (props.selected === true) {
+    //     return (
+    //         <span><b>Star </b></span>
+    //     )
+    // } else {
+    //     return (
+    //         <span>Star </span>
+    //     )
+    // }
 }

@@ -41,5 +41,6 @@ const indicatorStyle={
             <div onClick={()=>{setOn(false)}} style={offStyle}>Off</div>
             <div style={indicatorStyle}></div>
         </div>
+
     )
 }
