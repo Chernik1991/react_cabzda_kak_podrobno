@@ -2,6 +2,9 @@ import React from "react";
 
 export type AccordionPropsType = {
     titleValue: string
+    /**
+     * overtreatment
+     */
     collapsed:boolean
     onChange: (collapsed:boolean)=>void
 }
